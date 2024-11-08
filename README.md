@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Swiggy Clone (Front-End Only) - Angular Project
 
 ## Project Overview
@@ -61,74 +60,6 @@ src/
 ### 7. **Footer Component**
    - Provides additional information or links at the bottom of the page.
 
-=======
-Here’s a README file for your Swiggy Clone project, explaining the project structure and components. You can add additional details as needed.
-
----
-
-# Swiggy Clone (Front-End Only) - Angular Project
-
-## Project Overview
-
-This project is a front-end-only Swiggy clone developed using Angular. It aims to replicate the essential user interface and interactions of a food discovery platform. The application displays featured restaurants, menus, and popular cuisines, and allows users to search, add items to favorites, manage a cart, and simulate an order process. Static data simulates the restaurant information and menu items, while mock API interactions simulate authentication and order storage.
-
-## Project Structure
-
-```
-src/
-└── app/
-    ├── components/
-    │   ├── cart/                # Cart component for displaying cart items and total
-    │   ├── favorites/           # Favorites component for showing saved items
-    │   ├── footer/              # Footer component for additional information or links
-    │   ├── home/                # Home component displaying featured restaurants and cuisines
-    │   ├── menu-card/           # Component for individual menu item display
-    │   ├── navbar/              # Navbar component for navigation
-    │   └── restaurant/          # Restaurant component showing details and menu items
-    ├── services/
-    │   ├── auth.service.ts      # Service handling user authentication
-    │   ├── cart.service.ts      # Service managing cart items and total cost
-    │   ├── favorites.service.ts # Service managing user's favorite items
-    │   ├── food.service.ts      # Service for static food data management
-    │   ├── order.service.ts     # Service simulating order placement in mock API
-    │   └── restaurant.service.ts # Service for managing restaurant and menu data
-    ├── app.component.css        # Global styles for the app
-    ├── app.component.html       # Main application template
-    ├── app.component.ts         # Root application component
-    ├── app.routes.ts            # Route configurations for navigation
-    └── assets/                  # Assets like icons and images
-```
-
-## Components
-
-### 1. **Home Component**
-   - Displays a list of featured restaurants and popular cuisines on the homepage.
-   - Includes a search bar to filter restaurants by name.
-   - Data is fetched from `FoodService`.
-
-### 2. **Navbar Component**
-   - Provides navigation links to the Home, Favorites, Cart, and other sections of the application.
-
-### 3. **Restaurant Component**
-   - Shows detailed information about a selected restaurant.
-   - Displays a list of menu items for each restaurant with an "Add to Cart" option.
-   - Utilizes route parameters to load specific restaurant data.
-
-### 4. **Menu-Card Component**
-   - Reusable component to display individual menu items.
-
-### 5. **Cart Component**
-   - Displays items added to the cart with the total price.
-   - Allows users to manage the cart by viewing, updating, or removing items.
-
-### 6. **Favorites Component**
-   - Shows a list of items or restaurants marked as favorites by the user.
-   - Allows users to add or remove items from the favorites list.
-
-### 7. **Footer Component**
-   - Provides additional information or links at the bottom of the page.
-
->>>>>>> 78f3557a3e6fc57b897d563040a4b7bb0e495b9e
 ## Services
 
 ### 1. **AuthService**
@@ -151,11 +82,7 @@ src/
 
 ## Key Features
 
-<<<<<<< HEAD
 - **Homepage**: Displays featured restaurants and popular cuisines.
-=======
-- **Homepage**: Displays featured restaurants, popular cuisines, and a search bar.
->>>>>>> 78f3557a3e6fc57b897d563040a4b7bb0e495b9e
 - **Favorites**: Allows users to add and view favorite items.
 - **Cart Simulation**: Users can add items to the cart, view the total, and manage cart contents.
 - **Static Data Management**: Uses Angular services for data storage and session management.
@@ -172,12 +99,4 @@ src/
    ```bash
    ng serve
    ```
-<<<<<<< HEAD
 3. Open [http://localhost:4200](http://localhost:4200) in your browser to view the application.
-=======
-3. Open [http://localhost:4200](http://localhost:4200) in your browser to view the application.
-
----
-
-This README provides an overview of the project structure, components, services, and setup instructions. Let me know if you'd like to add more details or specific descriptions.
->>>>>>> 78f3557a3e6fc57b897d563040a4b7bb0e495b9e
