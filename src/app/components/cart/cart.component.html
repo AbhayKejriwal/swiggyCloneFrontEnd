@@ -1,0 +1,40 @@
+<!-- cart.component.html -->
+<div class="w-[50%] mx-auto px-4 py-6">
+    <h1 class="text-2xl font-bold mb-4">Your Cart</h1>
+
+    <div *ngIf="cartItems.length > 0; else emptyCart" class="bg-white p-4 rounded-lg shadow-md">
+        <!-- Balance Sheet Style for Cart Items -->
+        <div class="grid grid-cols-4 gap-4 font-semibold border-b pb-2 pr-2 mb-2">
+            <p>Item</p>
+            <p class="flex justify-end">Quantity</p>
+            <p class="flex justify-end">Price per Item</p>
+            <p class="flex justify-end">Total Price</p>
+        </div>
+
+        <div *ngFor="let item of cartItems" class="grid grid-cols-4 gap-4 items-center py-2 pr-2 border-b">
+            <p>{{ item.name }}</p>
+            <p class="flex justify-end">{{ item.quantity }}</p>
+            <p class="flex justify-end">₹{{ item.price.replace('₹', '') }}</p>
+            <p class="flex justify-end">₹{{ item.totalPrice }}</p>
+        </div>
+
+        <!-- Grand Total and Buttons -->
+        <div class="flex justify-end items-center mt-4 mr-2 gap-4 font-semibold">
+            <p class="text-xl">Grand Total: </p>
+            <p class="text-xl">₹{{ totalCartValue }}</p>
+        </div>
+
+        <div class="flex justify-between mt-6">
+            <button (click)="clearCart()" class="bg-red-500 text-white px-4 py-2 rounded shadow">
+                Clear Cart
+            </button>
+            <button (click)="checkout()" class="bg-green-500 text-white px-4 py-2 rounded shadow">
+                Checkout
+            </button>
+        </div>
+    </div>
+
+    <ng-template #emptyCart>
+        <p class="text-gray-600">Your cart is empty.</p>
+    </ng-template>
+</div>

@@ -1,0 +1,56 @@
+<!-- home.component.html -->
+<!-- Food Items or Categories -->
+<div class="w-[75%] mx-auto my-4">
+    <h2 class="text-2xl font-extrabold m-4">Abhay, what's on your mind?</h2>
+    <div class="space-x-8 overflow-x-auto flex m-4">
+        <img *ngFor="let food of foodItems" [src]="food.imgUrl" [alt]="food.name" class="w-36 h-40 cursor-pointer"
+            (click)="onFoodCategoryClick(food.name)">
+    </div>
+</div>
+
+<hr class="w-[75%] mx-auto my-12 opacity-70" />
+
+<!-- Restaurants Section -->
+<div class="w-[75%] mx-auto my-8">
+    <div class="flex justify-between">
+        <h2 class="text-2xl font-extrabold mb-4">Top restaurant chains in Chennai</h2>
+        <button (click)="resetFilter()">Show All</button>
+    </div>
+
+
+    <!-- Check if there are no restaurants in the filtered list -->
+    <div *ngIf="filteredRestaurants.length === 0" class="text-center text-gray-600 text-lg my-8">
+        No restaurants available in this category
+    </div>
+
+    <div class="grid grid-cols-4 gap-8">
+        <div *ngFor="let restaurant of filteredRestaurants" class="hover:scale-95 duration-150">
+            <a [routerLink]="['/restaurant', restaurant.id]">
+                <img [src]="restaurant.imageUrl" [alt]="restaurant.name"
+                    class="h-44 w-64 object-cover rounded-xl shadow-xl">
+                <div class="restaurant-info pt-4 pl-4">
+                    <h3 class="text-lg font-semibold">{{ restaurant.name }}</h3>
+                    <span class="font-medium flex gap-2">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"
+                            strokeColor="rgba(2, 6, 12, 0.92)" fillColor="rgba(2, 6, 12, 0.92)">
+                            <circle cx="10" cy="10" r="9" fill="url(#StoreRating20_svg__paint0_linear_32982_71567)">
+                            </circle>
+                            <path
+                                d="M10.0816 12.865C10.0312 12.8353 9.96876 12.8353 9.91839 12.865L7.31647 14.3968C6.93482 14.6214 6.47106 14.2757 6.57745 13.8458L7.27568 11.0245C7.29055 10.9644 7.26965 10.9012 7.22195 10.8618L4.95521 8.99028C4.60833 8.70388 4.78653 8.14085 5.23502 8.10619L8.23448 7.87442C8.29403 7.86982 8.34612 7.83261 8.36979 7.77777L9.54092 5.06385C9.71462 4.66132 10.2854 4.66132 10.4591 5.06385L11.6302 7.77777C11.6539 7.83261 11.706 7.86982 11.7655 7.87442L14.765 8.10619C15.2135 8.14085 15.3917 8.70388 15.0448 8.99028L12.7781 10.8618C12.7303 10.9012 12.7095 10.9644 12.7243 11.0245L13.4225 13.8458C13.5289 14.2757 13.0652 14.6214 12.6835 14.3968L10.0816 12.865Z"
+                                fill="white"></path>
+                            <defs>
+                                <linearGradient id="StoreRating20_svg__paint0_linear_32982_71567" x1="10" y1="1" x2="10"
+                                    y2="19" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#21973B"></stop>
+                                    <stop offset="1" stop-color="#128540"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg> {{ restaurant.rating }} • {{ restaurant.deliveryTime }}</span>
+
+                    <p class="text-gray-600 text-sm">{{ restaurant.cuisine }}</p>
+                    <p class="text-gray-600 text-sm">{{ restaurant.location }}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<!-- favorites.component.html -->
+<div class="w-[50%] mx-auto px-4 py-6">
+    <h1 class="text-2xl font-bold mb-4">Your Favourite Items</h1>
+
+    <div *ngIf="favorites.length > 0; else noFavorites">
+        <app-menu-card *ngFor="let item of favorites" [item]="item"
+            (toggleFavorite)="toggleFavorite(item)"></app-menu-card>
+    </div>
+
+    <ng-template #noFavorites>
+        <p class="text-gray-600">You have no favorite items yet.</p>
+    </ng-template>
+</div>
